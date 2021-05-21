@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<center>
+  {% if message %}
+      <div class="alert alert-danger" style="width: 300px;">{{ message }}</div>
+  {% endif %}
+  <div class="login-form-body">
+    <div class="login-form-heading">
+      <h1>login</h1>
+      <br>
+    </div>
+    <div class="login-form-form">
+      <form method="POST">
+        {% csrf_token %}
+        <input class="login-form-input" placeholder="username" name="username">
+        <input class="login-form-input" placeholder="password" type="password" name="password"><br>
+        <button class="login-form-button">submit</button>
+      </form>
+    </div>
+  </div>
+  <a href="{% url 'register' %}">signup</a>
+</div>
+<Br><br><br><br><br><br><br><br>
+<div class="purple-thing-lol">
+  <div class="title w3-animate-opacity animate__animated animate__bounce">Features</div><br>
+  <div class="cards">
+    <div class="features-card">
+      <h2 class="features-heading">rickrolling</h2>
+      <span class="text-muted">
+        We have a special option for internet trolls: rickrolling. you can make your custom rickrolling link on cknlinks and send it to your enemies or freinds.
+    </div>
+    <div class="features-card">
+      <h2 class="features-heading">no ads</h2>
+      <span class="text-muted">
+        cknlinks will never have ads to interrupt your expirience on this site. it will never have ads on the links so your clickers will never get disrrupted by them. except maybe freenom will put ads on this site. we dont have control over that.
+    </div>
+    <div class="features-card">
+      <h2 class="features-heading">custom backhalf</h2>
+      <span class="text-muted">
+        to have a custom link in bitly, you have to pay. how awful! so we made it free. or maybe it's just because we don't know how to do it. anyways, custom backhalf! how amazing.
+    </div>
+  </div>
+</div>
+<center>
+</center>
+{% endblock %}

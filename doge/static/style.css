@@ -1,0 +1,246 @@
+body {
+  background-color: #263040;
+  color: white;
+  text-rendering: optimizeLegibility;
+  border-top: 6px #68d696 solid !important;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.login-form-body{
+  height: 350px;
+  width: 300px;
+  background-color: #1B232F;
+  border-radius: 30px;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.login-form-body h1{
+  font-weight: 500;
+}
+
+
+.login-form-body h1 {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.login-form-body .login-form-form{
+  margin-top: 30px;
+}
+
+.login-form-body .login-form-form .login-form-input{
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid #3ed0ed;
+  background-color: transparent;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+  width: 200px;
+  margin-bottom: 30px; 
+  color: white;
+  text-align: center;
+}
+
+.login-form-body .login-form-form .login-form-input:focus{
+  border-color:#AD91FF;
+  width: 250px;
+}
+
+
+.login-form-body .login-form-form .login-form-button{
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #68d696;
+  transition: 0.2s;
+}
+
+.homepage-btn{
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #68d696;
+  transition: 0.2s;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.homepage-btn:hover{
+  border: 2px solid #AD91FF;
+  color: #AD91FF;
+}
+
+
+.features-btn{
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #68d696;
+  transition: 0.2s;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+  text-decoration: none;
+}
+
+.features-btn:hover{
+  border: 2px solid #3c32cf !important;
+}
+
+
+.create-link-input{
+  background-color: #364052;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+  border: none;
+  border-collapse: separate; 
+  outline: none;
+  padding: 10px;
+  transition: 0.2s;
+  border-bottom-right-radius: 5px;
+}
+
+.create-link-input:focus{
+  background-color: #495569;
+  border-radius: 10px;
+}
+
+.create-link-checkbox{
+  width: 42px;
+  height: 17px;
+  cursor: pointer;
+  background-color: rgb(170 170 170 / 30%);
+  -webkit-appearance: none;
+  border-radius: 8px;
+  position: relative;
+  top: 2px;
+}
+
+.create-link-checkbox:before{
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  z-index: 2;
+  left: -2px;
+  transition: all .3s cubic-bezier(0.80, 0, 0.20, 1);
+}
+
+.create-link-checkbox:after{
+  content: "";
+  height: 100%;
+  width: 17px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  border-radius: 17px;
+  background-color: #58b17d;
+  transition: all .3s cubic-bezier(0.80, 0, 0.20, 1);
+}
+
+.create-link-checkbox:checked:before {
+  left: calc(100% - 19px);
+  background-color: #68d696;
+}
+
+.create-link-checkbox:checked:after {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.create-link-button{
+  padding: 10px 80px;
+  border: 2px solid #24D797;
+  color: white;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+.create-link-button:hover{
+  background-color: #24D797 !important;
+}
+
+.purple-thing-lol {
+    text-align: center !important;
+    background: #AD91FF !important;
+    padding: 15px 50px;
+    background-image: url(../static/wavy-dark-by-nouridio.svg) !important;
+    background-position: bottom !important;
+    background-size: 200% !important;
+    background-repeat: no-repeat !important;
+}
+.purple-thing-lol .title {
+    font-size: 40px;
+    color: #ffffff !important;
+    line-height: 70px;
+}
+
+.features-card{
+  background-color: #263040;
+  width: 300px;
+  min-height: 200px;
+  text-align: left;
+  padding: 10px 30px;
+  border-radius: 15px;
+  transition: all .1s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.features-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0.1px 25.6px rgba(0, 0, 0, 0.042),0 0.4px 30.2px rgba(0, 0, 0, 0.052),0 0.8px 31.5px rgba(0, 0, 0, 0.056),0 1.4px 31.4px rgba(0, 0, 0, 0.058), 0 2.1px 30.5px rgba(0, 0, 0, 0.058),0 3.1px 29.3px rgba(0, 0, 0, 0.059), 0 4.2px 28.2px rgba(0, 0, 0, 0.06), 0 5.7px 27.6px rgba(0, 0, 0, 0.064), 0 7.8px 28.8px rgba(0, 0, 0, 0.074),0 12px 43px rgba(0, 0, 0, 0.1)
+}
+.purple-thing-footer-container img{
+  width: 200%;
+  transform: rotateX(180deg);
+  /* position: relative;
+  bottom: 2000px; */
+  z-index: 2000;
+}

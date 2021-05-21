@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}cknlinks{% endblock %}</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'dashboard.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'icons/favicon.ico' %}">
+    <style>
+      @font-face {
+        font-family: Unisans;
+        src: url("{% static 'Uni Sans Heavy.otf' %}") format("opentype");
+      }
+
+      @font-face {
+        font-family: Unisans;
+        font-weight: bold;
+        src: url("{% static 'Uni Sans Heavy.otf' %}") format("opentype");
+      }
+    </style>
+  </head>
+  <body>
+    <div id="templates">
+      <div id="templates-error">
+        <div class="error" id="idi">
+          message
+          <span style="text-align: right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #263040;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'icons/android-chrome-192x192.png' %}" alt="" width="30" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              stuff
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/logout/">logout</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="dashboard">
+      <div class="dashboard-top">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="dashboard-bottom">
+        <div class="dashboard-links">
+          <div class="dashboard-create-link-button-big-container">
+            <button class="create-button-dash-link" onClick="hide_c_l()">create a link</button>
+          </div>
+          <hr>
+          <div class="dashboard-links-view">
+          </div>
+        </div>
+        <div class="dashboard-link-management">
+          <h4>link management</h4><br>
+          <div class="dashboard-link-info">
+          </div>
+          <div class="dashboard-create-link">
+            <h3>create a link</h3>
+            <div class="dashboard-paste-text" onClick="document.querySelector('#h5a-6').focus()">
+              <span class="dashboard-paste-text-label">
+                paste long url here
+              </span>
+              <textarea id="h5a-6" class="dashboard-paste-text-text" onfocus="document.querySelector('.dashboard-paste-text').style.border = '2px solid #77c799';" onfocusout='document.querySelector(".dashboard-paste-text").style.border = "2px solid #445063";'></textarea>
+            </div>
+            <input class="dashboard-paste-text-input" placeholder="custom back-half. (optional)" id="slug"><br>
+            <!-- <h5><center>Private? <input class="create-link-checkbox" type="checkbox" id="create-link-checkbox" ></center></h5> -->
+            <button class="dashboard-paste-text-button" onClick="dash.new()">shorten url</button>
+            <br><br>
+            <div id="create-link-success">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="errors">
+
+    </div>
+    <div class="help-button">
+      <button class="help-r-button" onmouseover="document.querySelector('.help-button-popover').style.opacity = '100'" onmouseout="document.querySelector('.help-button-popover').style.opacity = '0'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+          <path d="M3 4.075a.423.423 0 0 0 .43.44H4.9c.247 0 .442-.2.475-.445.159-1.17.962-2.022 2.393-2.022 1.222 0 2.342.611 2.342 2.082 0 1.132-.668 1.652-1.72 2.444-1.2.872-2.15 1.89-2.082 3.542l.005.386c.003.244.202.44.446.44h1.445c.247 0 .446-.2.446-.446v-.188c0-1.278.487-1.652 1.8-2.647 1.086-.826 2.217-1.743 2.217-3.667C12.667 1.301 10.393 0 7.903 0 5.645 0 3.17 1.053 3.001 4.075zm2.776 10.273c0 .95.758 1.652 1.8 1.652 1.085 0 1.832-.702 1.832-1.652 0-.985-.747-1.675-1.833-1.675-1.04 0-1.799.69-1.799 1.675z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="help-button-popover">
+      faq & help
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
+</html>

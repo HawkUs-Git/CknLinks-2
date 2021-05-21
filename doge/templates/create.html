@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+<center>
+  <hr>
+  <h2>create a link</h2>
+    <div class="create-link">
+      <input class="create-link-input" placeholder="the URL" type="url" id="create-link-url"><br>
+      <input class="create-link-input" placeholder="name of the link? optional" type="text" onClick="alert('This features isn\'t supported yet.')" disabled><br>
+      <input class="create-link-input" placeholder="url slug? optional" type="text" id="create-link-slug"><br>
+      <h4>Private? <input class="create-link-checkbox" type="checkbox" id="create-link-checkbox" ></h4>
+      <button class="create-link-button" onClick="magic.new()">create</button>
+    </div>
+    <br><br>
+    <div id="create-link-success">
+
+
+    </div>
+</center>
+{% endblock %}

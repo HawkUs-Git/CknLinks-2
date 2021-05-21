@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<hr>
+<style>
+  body {
+    background-color: #263040;
+    color: white;
+    text-rendering: optimizeLegibility;
+    border-top: 6px #68d696 solid !important;
+  }
+</style>
+<center>
+  <h1>Please wait while we redirect you to your page...</h1>
+  <a href="{{ link.url }}" class="link" id="redirect_link">Or, click here to go there yourself</a>
+  <script>
+    document.querySelector("#redirect_link").click()
+  </script>
+</center>
+{% endblock %}
